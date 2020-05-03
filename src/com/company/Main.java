@@ -10,6 +10,7 @@ public class Main {
         me.pet.name = "Reksio";
         me.pet.feed();
 
+        Car fura = new Car("Mercedes","M4",1999,"Czarny",20000.);
 
 
 
