@@ -1,10 +1,9 @@
 package com.company.creatures;
 
-import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
-public class Human extends Animal{
+public class Human extends Animal {
 
     public String firstName;
     public String lastName;
@@ -15,27 +14,25 @@ public class Human extends Animal{
 
     private Double salary;
 
-    public final static Double DEFAULT_HUMAN_WEIGHT=70.;
+    public final static Double DEFAULT_HUMAN_WEIGHT = 70.;
 
     public Human() {
         super("homo sapiens");
-        weight =DEFAULT_HUMAN_WEIGHT;
+        weight = DEFAULT_HUMAN_WEIGHT;
     }
 
-    public void shareCar(Car dzielony){
-        car=dzielony;
+    public void shareCar(Car dzielony) {
+        car = dzielony;
     }
 
     public void setCar(Car car) {
-        if(salary*5>car.cena) {
+        if (salary * 5 > car.cena) {
             System.out.println("Samochód gupiony za gotówke");
             this.car = car;
-        }
-        else if(salary*10>car.cena){
+        } else if (salary * 10 > car.cena) {
             System.out.println("Samochód kupiony na kredyt");
             this.car = car;
-        }
-        else{
+        } else {
             System.out.println("Na samochód cię nie stać cię biedaku");
         }
     }

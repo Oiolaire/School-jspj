@@ -1,15 +1,17 @@
 package com.company.devices;
 
-public abstract class Device {
+import com.company.Saleable;
+
+public abstract class Device implements Saleable{
     public final String producent;
     public final String model;
-    public final Double cena;
     public final Integer yearOfProduction;
 
-    public Device(String producent, String model, Double cena, Integer yearOfProduction) {
+    public Device(String producent, String model, Integer yearOfProduction) {
         this.producent = producent;
         this.model = model;
-        this.cena = cena;
         this.yearOfProduction = yearOfProduction;
     }
+
+    abstract void turnOn();
 }

@@ -1,8 +1,10 @@
 package com.company.creatures;
 
+import com.company.Saleable;
+
 import java.io.File;
 
-public class Animal {
+public class Animal implements Edible, Saleable {
 
     final String species;
     protected Double weight;
@@ -45,4 +47,21 @@ public class Animal {
     }
 
 
+    @Override
+    public void sell() throws Exception {
+        if (this instanceof Human)
+            throw new Exception("Nie wolno sprzedawać ludzi");
+        else System.out.println("Sprzedałeś zwierzaka");
+
+    }
+
+
+    @Override
+    public void beEaten() throws Exception {
+        if (this instanceof Human) throw new Exception("Kanibalizm jest nielegalny");
+        else {
+            System.out.println("Mniam");
+            this.weight = 0.0;
+        }
+    }
 }

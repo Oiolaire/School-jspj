@@ -6,13 +6,19 @@ import com.company.devices.Car;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Human me = new Human();
         me.firstName = "Mikołaj";
         me.lastName = "Majkowski";
         me.pet = new Animal("dog");
         me.pet.name = "Reksio";
         me.pet.feed();
+
+
+//        me.pet.beEaten();
+//        me.beEaten();
+        me.pet.sell();
+        me.sell();
 
         Animal dog = new Animal("dog");
         dog.name = "Akita";
@@ -23,15 +29,15 @@ public class Main {
         System.out.println("My salary is: " + me.getSalary());
 
 
-        Car fura = new Car("Mercedes","M4",1999,"Czarny",20000.);
-        Car fiat = new Car("Fiat", "Scudo",2000, "Czerwony",12000.);
-        Car fiat2 = new Car("Fiat", "Scudo",2000, "Czerwony",12000.);
+        Car fura = new Car("Mercedes", "M4", 20000., 1999, "Czarny");
+        Car fiat = new Car("Fiat", "Scudo", 12000., 2000, "Czerwony");
+        Car fiat2 = new Car("Fiat", "Scudo", 12000., 2000, "Czerwony");
 
         me.setCar(fura);
 
-        if (fiat.equals(fiat2)){
+        if (fiat.equals(fiat2)) {
             System.out.println("Są równe");
-        }else{
+        } else {
             System.out.println("Nie są równe");
         }
 
