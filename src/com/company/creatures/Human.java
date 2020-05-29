@@ -4,7 +4,7 @@ import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
-public class Human {
+public class Human extends Animal{
 
     public String firstName;
     public String lastName;
@@ -14,6 +14,13 @@ public class Human {
     private Car car;
 
     private Double salary;
+
+    public final static Double DEFAULT_HUMAN_WEIGHT=70.;
+
+    public Human() {
+        super("homo sapiens");
+        weight =DEFAULT_HUMAN_WEIGHT;
+    }
 
     public void shareCar(Car dzielony){
         car=dzielony;

@@ -1,22 +1,12 @@
 package com.company.devices;
 
-public class Car {
-
-    public final String marka;
-    public final String model;
-    public final Integer yearOfProduction;
+public class Car extends Device{
     public final String kolor;
-    public final Double cena;
-
-    public Car(String marka, String model, Integer yearOfProduction, String kolor, Double cena) {
-        this.marka = marka;
-        this.model = model;
-        this.yearOfProduction = yearOfProduction;
+    public Car(String producent, String model, Double cena, Integer yearOfProduction, String kolor) {
+        super(producent, model, cena, yearOfProduction);
         this.kolor = kolor;
-        this.cena = cena;
     }
-
     public String toString(){
-        return marka+ " "+model+" "+yearOfProduction;
+    return producent+ " "+model+" "+yearOfProduction;
     }
 }
