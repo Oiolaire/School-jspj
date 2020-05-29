@@ -15,10 +15,12 @@ public class Human extends Animal {
     private Double salary;
 
     public final static Double DEFAULT_HUMAN_WEIGHT = 70.;
+    public double cash;
 
     public Human() {
         super("homo sapiens");
-        weight = DEFAULT_HUMAN_WEIGHT;
+        this.weight = DEFAULT_HUMAN_WEIGHT;
+        this.cash=1000d;
     }
 
     public void shareCar(Car dzielony) {
@@ -26,14 +28,14 @@ public class Human extends Animal {
     }
 
     public void setCar(Car car) {
-        if (salary * 5 > car.cena) {
-            System.out.println("Samochód gupiony za gotówke");
+        if (salary * 5 > car.price) {
+            System.out.println("Car bought for money");
             this.car = car;
-        } else if (salary * 10 > car.cena) {
-            System.out.println("Samochód kupiony na kredyt");
+        } else if (salary * 10 > car.price) {
+            System.out.println("Car bought thanks to the bank loan");
             this.car = car;
         } else {
-            System.out.println("Na samochód cię nie stać cię biedaku");
+            System.out.println("You can't afford a car");
         }
     }
 

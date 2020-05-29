@@ -15,10 +15,10 @@ public class Main {
         me.pet.feed();
 
 
-//        me.pet.beEaten();
-//        me.beEaten();
-        me.pet.sell();
-        me.sell();
+//    //  me.pet.beEaten();
+//    //  me.beEaten();
+      //  me.pet.sell();
+      //  me.sell();
 
         Animal dog = new Animal("dog");
         dog.name = "Akita";
@@ -36,9 +36,9 @@ public class Main {
         me.setCar(fura);
 
         if (fiat.equals(fiat2)) {
-            System.out.println("Są równe");
+            System.out.println("Are equal");
         } else {
-            System.out.println("Nie są równe");
+            System.out.println("Are'nt equal");
         }
 
         System.out.println(dog);

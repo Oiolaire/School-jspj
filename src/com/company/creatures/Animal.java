@@ -1,6 +1,8 @@
 package com.company.creatures;
 
+import com.company.creatures.Human;
 import com.company.Saleable;
+
 
 import java.io.File;
 
@@ -48,12 +50,22 @@ public class Animal implements Edible, Saleable {
 
 
     @Override
-    public void sell() throws Exception {
-        if (this instanceof Human)
-            throw new Exception("Nie wolno sprzedawać ludzi");
-        else System.out.println("Sprzedałeś zwierzaka");
+     public void sell(Human buyer, Human seller, Double price) throws Exception {
+            if (this instanceof Human) {
+                throw new Exception("You can't sell people");
+            } else if (price < buyer.cash) {
 
-    }
+                buyer.cash -= price;
+                seller.cash += price;
+                System.out.println("You sold your pet for " + price);
+            } else {
+                System.out.println("You dont have enough money");
+            }
+     }
+
+
+
+
 
 
     @Override
