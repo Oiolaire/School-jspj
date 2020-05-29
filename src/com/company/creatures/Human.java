@@ -1,14 +1,23 @@
-package com.company;
+package com.company.creatures;
+
+import com.company.creatures.Animal;
+import com.company.devices.Car;
+import com.company.devices.Phone;
 
 public class Human {
 
     public String firstName;
     public String lastName;
     public Animal pet;
+    public Phone phone;
 
     private Car car;
 
     private Double salary;
+
+    public void shareCar(Car dzielony){
+        car=dzielony;
+    }
 
     public void setCar(Car car) {
         if(salary*5>car.cena) {
