@@ -3,6 +3,8 @@ package com.company;
 import com.company.creatures.Animal;
 import com.company.creatures.Human;
 import com.company.devices.Car;
+import com.company.creatures.FarmAnimal;
+import com.company.creatures.Pet;
 
 public class Main {
 
@@ -10,7 +12,7 @@ public class Main {
         Human me = new Human();
         me.firstName = "Mikołaj";
         me.lastName = "Majkowski";
-        me.pet = new Animal("dog");
+        me.pet = new Pet("dog");
         me.pet.name = "Reksio";
         me.pet.feed();
 
@@ -20,7 +22,7 @@ public class Main {
       //  me.pet.sell();
       //  me.sell();
 
-        Animal dog = new Animal("dog");
+        Pet dog = new Pet("dog");
         dog.name = "Akita";
 
         me.pet = dog;
@@ -45,26 +47,13 @@ public class Main {
         System.out.println(fiat);
         System.out.println(me);
 
-        me.pet.feed();
-        me.pet.feed();
-        me.pet.feed();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.feed();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.walk();
-        me.pet.feed();
+        FarmAnimal cow = new FarmAnimal("cow");
+        cow.feed(5);
+        cow.beEaten();
+        cow.feed();
+
+        dog.feed();
+        dog.feed(1.5);
 
     }
 }

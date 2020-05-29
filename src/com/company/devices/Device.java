@@ -14,7 +14,7 @@ public abstract class Device implements Saleable{
         this.yearOfProduction = yearOfProduction;
     }
 
-    abstract void turnOn();
+    public abstract void turnOn();
 
     public void sell(Human buyer, Human seller, Double price) throws Exception {
         if (price < buyer.cash) {

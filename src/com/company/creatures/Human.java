@@ -59,4 +59,9 @@ public class Human extends Animal {
     public Double getSalary() {
         return salary;
     }
+
+    @Override
+    public void beEaten() throws Exception {
+
+    }
 }

@@ -12,7 +12,7 @@ public class Phone extends Device {
     }
 
     @Override
-    void turnOn() {
+    public void turnOn() {
         System.out.println("Whoom");
     }
 
