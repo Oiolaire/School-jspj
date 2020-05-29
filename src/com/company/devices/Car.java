@@ -1,6 +1,6 @@
 package com.company.devices;
 
-public class Car extends Device {
+public abstract class Car extends Device {
     public final String color;
     public final Double price;
 
@@ -18,5 +18,6 @@ public class Car extends Device {
     public void turnOn() {
         System.out.println("Wroom");
     }
+    public abstract void refuel();
 
 }
