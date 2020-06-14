@@ -70,5 +70,35 @@ public class Main {
         fiat.refuel();
         fiat2.refuel();
 
+        Phone komura = new Phone("Szajsung", "Galaxy S7", 2016);
+
+        me.phone = komura;
+        komura.owner = me;
+        me.cash = 7.;
+
+        Application Firevox = new Application("Firevox", "2.2", 0.);
+        Application Google_Lay = new Application("Google Lay", "96", 0.);
+        Application League_of_Legos = new Application("League of Lego's", "10.16", 1.);
+        Application travel = new Application("Travel for everybody", "1.0", 5.);
+        Application tapeta = new Application("Wallpaper Engine", "2.8", 20.);
+
+        komura.installApp(Firevox);
+        komura.installApp(Google_Lay);
+        komura.installApp(League_of_Legos);
+        komura.listAllAppsAlphabetical();
+        komura.listAllFreeApps();
+
+        System.out.println("\nIs Firevox installed: " + komura.isThisAppInstalled(Firevox));
+        System.out.println("Is the travel app installed: " + komura.isThisAppInstalled(travel));
+        System.out.println("Is Goodle Lay installed: " + komura.isThisAppInstalled("Google Lay"));
+        System.out.println();
+
+        komura.installApp(travel);
+        komura.installApp(tapeta);
+
+        komura.listAllAppsSortedByPrice();
+        System.out.println();
+        System.out.println("Added value of all apps: " + komura.valueOfAllApps());
+
     }
 }
