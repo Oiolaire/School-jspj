@@ -9,13 +9,16 @@ import com.company.creatures.Pet;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        Human me = new Human();
+        Human me = new Human(3);
         me.firstName = "Mikołaj";
         me.lastName = "Majkowski";
         me.pet = new Pet("dog");
         me.pet.name = "Reksio";
         me.pet.feed();
 
+        Human wife = new Human();
+        wife.cash = 5000.;
+        wife.setSalary(500d);
 
       //  me.pet.beEaten();
       //  me.beEaten();
@@ -33,10 +36,18 @@ public class Main {
 
         Car fura = new Disel("Mercedes", "M4", 20000., 1999, "Czarny");
         Car fiat = new LPG("Fiat", "Scudo", 12000., 2000, "Czerwony");
-        Car fiat2 = new LPG("Fiat", "Scudo", 12000., 2000, "Czerwony");
+        Car fiat2 = new Electric("Fiat", "Terra",25000., 2020,"niebieski");
+        me.setCar(fura, 2);
 
-        me.setCar(fura);
+        me.garage[0] = (fura);
+        me.garage[1]= fiat;
+        me.garage[2]= fiat2;
 
+        fura.sell(wife,me,1000.);
+//        fura.sell(wife,me,10000.);
+        System.out.println("I'm driving: " + me.getCar(0) + ", " + me.getCar(1) + ", " + me.getCar(2));
+        System.out.println("My cars worth: " + me.cars_Value());
+        System.out.println("My spouse is driving: " + wife.getCar(0));
         //if (fiat.equals(fiat2)) {
         //    System.out.println("Are equal");
         //} else {

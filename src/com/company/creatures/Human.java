@@ -2,6 +2,8 @@ package com.company.creatures;
 
 import com.company.devices.Car;
 import com.company.devices.Phone;
+import java. util. Arrays;
+import java.util.Comparator;
 
 public class Human extends Animal {
 
@@ -10,37 +12,64 @@ public class Human extends Animal {
     public Animal pet;
     public Phone phone;
 
-    private Car car;
+    public Car[] garage;
 
     private Double salary;
 
     public final static Double DEFAULT_HUMAN_WEIGHT = 70.;
+    public final static Integer DEFAULT_GARAGE_SIZE = 1;
     public double cash;
 
     public Human() {
         super("homo sapiens");
         this.weight = DEFAULT_HUMAN_WEIGHT;
-        this.cash=1000d;
+        this.cash = 1000d;
+        this.garage = new Car[DEFAULT_GARAGE_SIZE];
     }
 
-    public void shareCar(Car dzielony) {
-        car = dzielony;
+    public Human(Integer garage_size) {
+        super("homo sapiens");
+        this.weight = DEFAULT_HUMAN_WEIGHT;
+        this.cash = 1000d;
+        this.garage = new Car[garage_size];
     }
 
-    public void setCar(Car car) {
-        if (salary * 5 > car.price) {
-            System.out.println("Car bought for money");
-            this.car = car;
-        } else if (salary * 10 > car.price) {
-            System.out.println("Car bought thanks to the bank loan");
-            this.car = car;
-        } else {
-            System.out.println("You can't afford a car");
+//    public void shareCar(Car dzielony) {
+//        Car = dzielony;
+//    }
+
+//    public void setCar(Car car) {
+//        if (salary * 5 > car.price) {
+//            System.out.println("Car bought for money");
+//            this.car = car;
+//        } else if (salary * 10 > car.price) {
+//            System.out.println("Car bought thanks to the bank loan");
+//            this.car = car;
+//        } else {
+//            System.out.println("You can't afford a car");
+//        }
+//    }
+//
+    public Car getCar(Integer spot) {
+        return garage[spot];
+    }
+
+    public void setCar(Car c, Integer spot) {
+        garage[spot] = c;
+    }
+
+    public Double cars_Value() {
+        Double a = 0.;
+        for (int i = 0; i < garage.length; i++) {
+            if (garage[i] != null) {
+                a += garage[i].value;
+            }
         }
+        return a;
     }
 
-    public void getCar() {
-        System.out.println("I'm driving : " + car);
+    public void sort_Garage() {
+        Arrays.sort(garage);
     }
 
     public void setSalary(Double salary) {
@@ -65,3 +94,4 @@ public class Human extends Animal {
 
     }
 }
+
