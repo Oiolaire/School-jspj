@@ -60,9 +60,9 @@ public class Human extends Animal {
 
     public Double cars_Value() {
         Double a = 0.;
-        for (int i = 0; i < garage.length; i++) {
-            if (garage[i] != null) {
-                a += garage[i].value;
+        for (Car car : garage) {
+            if (car != null) {
+                a += car.value;
             }
         }
         return a;
